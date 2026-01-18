@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PURUS Städ i Stockholm - Professionell Städservice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        /* Header & Logo */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: #2d5016;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fef08a;
+            font-weight: bold;
+        }
+        
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d5016;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background: #fef08a;
+            color: #2d5016;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
+            margin-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.88);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            color: #2d5016;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #2d5016;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: #2d5016;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1f3910;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(45, 80, 22, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #2d5016;
+            border: 2px solid #2d5016;
+        }
+        
+        .btn-secondary:hover {
+            background: #fef08a;
+            border-color: #fef08a;
+        }
+        
+        /* Content Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        /* Box/Card System */
+        .box {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s;
+        }
+        
+        .box:hover {
+            border-color: #fef08a;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .box h3 {
+            color: #2d5016;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .box p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* About Section */
+        #vad-ar-vi {
+            background: #f9fafb;
+        }
+        
+        /* Why Choose Us */
+        #varfor-valja-oss .grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #2d5016;
+            color: #fef08a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        #kontakt {
+            background: #f9fafb;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-box {
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-box a {
+            color: #2d5016;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Service Cards with Images */
+        .service-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: #fef08a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-content h3 {
+            color: #2d5016;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            color: #2d5016;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .read-more:hover {
+            color: #1f3910;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d5016;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 3rem;
+            border: 2px solid #fef08a;
+            border-radius: 10px;
+            max-width: 700px;
+            position: relative;
+            animation: slideDown 0.4s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: #2d5016;
+        }
+        
+        .box.clickable {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .box.clickable::after {
+            content: '→';
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: #2d5016;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .box.clickable:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#hem" class="logo-section">
+                <div class="logo">P</div>
+                <div class="company-name">PURUS</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#hem">Hem</a></li>
+                    <li><a href="#foretagstjanster">Företagstjänster</a></li>
+                    <li><a href="#fastighetstjanster">Fastighetstjänster</a></li>
+                    <li><a href="#privattjanster">Privattjänster</a></li>
+                    <li><a href="#kundreferenser">Kundreferenser</a></li>
+                    <li><a href="#om-oss">Om Oss</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hem" style="display: flex;">
+        <div class="hero-content">
+            <div class="badge">Tillgängliga 24/7 - 365 dagar om året</div>
+            <h1>PURUS Städ i Stockholm</h1>
+            <p>Professionell städservice med trygghet, kvalitet och seriositet</p>
+            <div class="cta-buttons">
+                <a href="#kontakt" class="btn btn-primary">Begär Offert</a>
+                <a href="#foretagstjanster" class="btn btn-secondary">Företagstjänster</a>
+                <a href="#fastighetstjanster" class="btn btn-secondary">Fastighetstjänster</a>
+                <a href="#privattjanster" class="btn btn-secondary">Privattjänster</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vad är vi -->
+    <section id="vad-ar-vi" style="display: block;">
+        <div class="container">
+            <h2>100 % nöjd-kund-garanti</h2>
+            <div class="box" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #555;">
+                    PURUS Städ i Stockholm ger dig en fast, bakgrundskontrollerad städare, tydliga avtal och full försäkring. Vi erbjuder 100 % nöjd-kund-garanti, snabb återkoppling och flexibla lösningar som gör oss enkla och trygga att samarbeta med.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Varför välja oss -->
+    <section id="varfor-valja-oss" style="display: block;">
+        <div class="container">
+            <h2>Varför ska du välja oss?</h2>
+            <div class="grid">
+                <div class="box clickable" onclick="openModal('trygghet-kort')">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Trygghet</h3>
+                    <p>Erfaren och utbildad personal. F-skatt, momsregistrerad och registrerad arbetsgivare.</p>
+                </div>
+                
+                <div class="box clickable" onclick="openModal('kvalitet-kort')">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Kvalitet</h3>
+                    <p>Moderna städmetoder och kontinuerlig kvalitetssäkring genom uppföljningar.</p>
+                </div>
+                
+                <div class="box clickable" onclick="openModal('seriositet')">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Seriositet</h3>
+                    <p>Ärlighet och professionalism i allt vi gör. Lång erfarenhet sedan 2015.</p>
+                </div>
+                
+                <div class="box clickable" onclick="openModal('tillganglighet')">
+                    <div class="feature-icon">🕐</div>
+                    <h3>Tillgänglighet</h3>
+                    <p>24/7 service, 365 dagar om året. Vi finns när du behöver oss.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Företagstjänster -->
+    <section id="foretagstjanster" style="background: #f9fafb;">
+        <div class="container">
+            <h2>Tjänster för Företagskund</h2>
+            <div class="grid">
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/7641828/pexels-photo-7641828.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kontorsstädning" class="service-image">
+                    <div class="service-content">
+                        <h3>Kontorsstädning</h3>
+                        <p>Mer än bara städning – En investering i er arbetsträde</p>
+                        <a href="javascript:void(0);" class="read-more" onclick="showSection('kontorsstadning-detalj')">Läs mer →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/5217882/pexels-photo-5217882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Butiksstädning" class="service-image">
+                    <div class="service-content">
+                        <h3>Butiksstädning</h3>
+                        <p>Ren och välkomnande butiksmiljö.</p>
+                        <a href="#" class="read-more">Läs mer →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/8961183/pexels-photo-8961183.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Industristädning" class="service-image">
+                    <div class="service-content">
+                        <h3>Industristädning</h3>
+                        <p>Specialiserad rengöring för industriella miljöer.</p>
+                        <a href="#" class="read-more">Läs mer →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="https://images.pexels.com/photos/5691577/pexels-photo-5691577.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Byggstädning" class="service-image">
+                    <div class="service-content">
+                        <h3>Byggstädning</h3>
+                        <p>Effektiv städning efter byggprojekt.</p>
+                        <a href="#" class="read-more">Läs mer →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontorsstädning Detail Section -->
+    <section id="kontorsstadning-detalj" style="background: #f9fafb; display: none;">
+        <div class="container">
+            <button onclick="showSection('foretagstjanster')" style="background: #2d5016; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 2rem; font-weight: 600;">← Tillbaka till Företagstjänster</button>
+            
+            <h2 style="color: #2d5016; margin-bottom: 2rem;">Kontorsstädning</h2>
+            
+            <div class="box" style="max-width: 1200px; margin: 0 auto 2rem;">
+                <h3 style="color: #2d5016; margin-bottom: 1rem;">Mer än bara städning – En investering i er arbetsträde</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                    Vår kontorsstädning säkerställer en ren, hälsosam och trivsam arbetsmiljö för era medarbetare. Vi erbjuder flexibla lösningar anpassade efter era behov – daglig, veckovis eller efter överenskommelse.
+                </p>
+            </div>
+            
+            <h3 style="color: #2d5016; text-align: center; margin-bottom: 2rem; font-size: 2rem;">Grundläggande Standardtjänster</h3>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">
+                Dessa utförs vanligtvis dagligen eller veckovis för att upprätthålla hygien och trivsel
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                <div class="box">
+                    <h4 style="color: #2d5016; font-size: 1.3rem; margin-bottom: 1rem;">📋 Alla ytor/rum</h4>
+                    <ul style="line-height: 1.9; color: #555; margin-left: 1.5rem;">
+                        <li>Tömning av papperskorgar och sortering/återvinning</li>
+                        <li>Dammsugning av mattor och golv</li>
+                        <li>Fuktmoppning/torrmoppning av hårda golv</li>
+                        <li>Dammtorkning/avtorkning av fria ytor (fönsterbrädor, hyllor)</li>
+                        <li>Avfläckning av dörrar, handtag, strömbrytare och lister</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h4 style="color: #2d5016; font-size: 1.3rem; margin-bottom: 1rem;">🚻 Toaletter/sanitet</h4>
+                    <ul style="line-height: 1.9; color: #555; margin-left: 1.5rem;">
+                        <li>Rengöring av toalett, handfat och dusch</li>
+                        <li>Putsning av speglar</li>
+                        <li>Påfyllning av papper, tvål och förbrukningsmaterial</li>
+                        <li>Desinficering av högriskytor</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h4 style="color: #2d5016; font-size: 1.3rem; margin-bottom: 1rem;">☕ Kök/pentry/matrum</h4>
+                    <ul style="line-height: 1.9; color: #555; margin-left: 1.5rem;">
+                        <li>Avtorkning av diskbänk, bänkskivor och spis</li>
+                        <li>Rengöring av mikro, kaffemaskin (utvändigt)</li>
+                        <li>Tömning av sopor och diskning av gemensamma ytor</li>
+                        <li>Påfyllning av kaffe, tepåsar etc. vid behov</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h4 style="color: #2d5016; font-size: 1.3rem; margin-bottom: 1rem;">🚪 Entré/reception/korridorer</h4>
+                    <ul style="line-height: 1.9; color: #555; margin-left: 1.5rem;">
+                        <li>Dammsugning och moppning</li>
+                        <li>Avtorkning av reception, bord och glaspartier</li>
+                        <li>Skakning av entrémattor</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h4 style="color: #2d5016; font-size: 1.3rem; margin-bottom: 1rem;">💼 Kontorslandskap/konferensrum</h4>
+                    <ul style="line-height: 1.9; color: #555; margin-left: 1.5rem;">
+                        <li>Avtorkning av skrivbord och mötesbord</li>
+                        <li>Dammsugning av stolar och stoppade möbler</li>
+                        <li>Rengöring av whiteboard (ej om märkt "låt stå")</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="box" style="max-width: 900px; margin: 3rem auto 0; text-align: center; background: white;">
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #2d5016; font-weight: 600;">
+                    Alla tjänster ingår i 90%+ av alla kontorsavtal och utförs med högsta kvalitet!
+                </p>
+                <div style="margin-top: 2rem;">
+                    <a href="#kontakt" class="btn btn-primary" onclick="showSection('kontakt')">Begär Offert</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Om Oss -->
+    <section id="om-oss" style="position: relative; background-image: url('https://images.pexels.com/photos/5989932/pexels-photo-5989932.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center;">
+        <div style="position: absolute; inset: 0; background: rgba(255, 255, 255, 0.92);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2>Om PURUS Städ i Stockholm</h2>
+            
+            <div class="box" style="max-width: 1000px; margin: 0 auto 3rem;">
+                <p style="font-size: 1.2rem; line-height: 1.8; text-align: center; color: #555;">
+                    PURUS Städ är rätt partner när du vill ha en städleverantör som både är trygg och enkel att göra affärer med.
+                </p>
+            </div>
+            
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+                <div class="box clickable" onclick="openModal('trygghet')">
+                    <h3>Trygghet i varje uppdrag</h3>
+                    <p>När du anlitar Purus Städ får du en fast, bakgrundskontrollerad städare som lär känna era lokaler, rutiner och krav på detaljer. Det minskar risken för missförstånd, ger högre kvalitet över tid och gör att ni alltid vet vem som rör sig i era utrymmen. Allt arbete utförs under tydliga avtal och med fullgott försäkringsskydd, så att ni kan fokusera på er kärnverksamhet.</p>
+                </div>
+                
+                <div class="box clickable" onclick="openModal('enkelt')">
+                    <h3>Enkelt att samarbeta</h3>
+                    <p>Vi vet att företag inte har tid för krångel, därför är våra processer raka och snabba – från offert till löpande drift. Ni får en tydlig kontaktväg och snabb återkoppling när ni vill ändra omfattning, lägga till extra städning eller rapportera något som behöver åtgärdas. Vår ambition är att vara den leverantör som är enklast att samarbeta med i hela kedjan – praktiskt, administrativt och kommunikativt.</p>
+                </div>
+                
+                <div class="box clickable" onclick="openModal('kvalitet')">
+                    <h3>Ansvar för kvalitet</h3>
+                    <p>Vi lämnar inte kvaliteten åt slumpen utan arbetar efter strukturerade rutiner, checklistor och regelbundna avstämningar. Skulle något inte motsvara era förväntningar erbjuder vi en tydlig nöjd-kund-garanti: vi åtgärdar brister skyndsamt utan extra kostnad. Det skapar förutsägbarhet och trygghet för både beställare och användare av lokalerna.</p>
+                </div>
+                
+                <div class="box clickable" onclick="openModal('relationer')">
+                    <h3>Långsiktiga relationer</h3>
+                    <p>PURUS Städ bygger hellre långa samarbeten än korta uppdrag. Genom att sätta både kund och medarbetare i centrum minskar vi personalomsättningen, vilket ger stabilitet och kontinuitet i leveransen. För er innebär det mindre administration, färre störningar och en leverantör som successivt blir bättre på att förstå era behov.</p>
+                </div>
+                
+                <div class="box clickable" onclick="openModal('flexibilitet')">
+                    <h3>Flexibilitet när behoven ändras</h3>
+                    <p>Behoven kan variera över året – inflyttning, ombyggnation, högsäsong eller förändrad bemanning. Vi erbjuder flexibla lösningar där omfattning och frekvens kan skalas upp eller ner utan onödigt krångel. Vårt mål är att ni alltid ska känna att städningen följer verksamheten, inte tvärtom.</p>
+                </div>
+                
+                <div class="box clickable" onclick="openModal('checkin')">
+                    <h3>Check-in – Strukturerad uppföljning</h3>
+                    <p>Vi arbetar strukturerat med kontinuerlig uppföljning av alla våra uppdrag. För våra företagskunder innebär det regelbundna månadsmöten där vi tillsammans går igenom kvalitet, förbättringsförslag och eventuella avvikelser – innan de blir problem. På dessa möten pratar vi bland annat om städnivå, tider, tillgång till lokaler, extra behov samt kommande förändringar i verksamheten. Vi följer även upp ekonomi och bemanning så att uppdraget alltid är rätt dimensionerat och effektivt organiserat. Syftet är att göra samarbetet levande och transparent – ni ska alltid veta hur uppdraget mår, vad vi gör för att förbättra det och vilka justeringar som planeras framåt.</p>
+                </div>
+            </div>
+            
+            <div class="box" style="max-width: 900px; margin: 3rem auto 0; text-align: center; background: #f9fafb;">
+                <h3>Etablerat 2015</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 1rem;">
+                    Med över 25 dedikerade medarbetare och flera servicefordon levererar vi professionell städning till företag, fastigheter och privatpersoner i hela Stockholmsområdet.
+                </p>
+            </div>
+            
+            <!-- Certifieringar -->
+            <div style="margin-top: 5rem;">
+                <h2 style="color: #2d5016; text-align: center; margin-bottom: 2rem;">PURUS Städ – Certifierade för högsta kvalitet</h2>
+                
+                <div class="box" style="max-width: 1000px; margin: 0 auto 3rem; text-align: center;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        Vi på PURUS Städ är stolta över att inneha branschens ledande certifieringar. Dessa är vårt löfte om systematisk kvalitet, miljöansvar och professionell leverans – granskade och godkända av oberoende tredje part.
+                    </p>
+                    <p style="font-size: 1rem; line-height: 1.8; color: #555; margin-top: 1rem;">
+                        Vi investerar kontinuerligt i nya certifieringar och utbildning för vår personal för att alltid ligga i framkant och leverera den trygghet ni förtjänar.
+                    </p>
+                </div>
+                
+                <h3 style="color: #2d5016; text-align: center; margin-bottom: 3rem; font-size: 1.8rem;">Våra certifieringar</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                    <div class="box" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #2d5016; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #fef08a; font-size: 2rem; font-weight: bold;">ISO</div>
+                        <h4 style="color: #2d5016; margin-bottom: 0.5rem;">ISO 9001 – Kvalitetsledning</h4>
+                        <p style="color: #666; font-size: 0.95rem;">Systematiska processer för jämn kvalitet och kundnöjdhet.</p>
+                    </div>
+                    
+                    <div class="box" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #2d5016; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #fef08a; font-size: 2rem; font-weight: bold;">ISO</div>
+                        <h4 style="color: #2d5016; margin-bottom: 0.5rem;">ISO 14001 – Miljöledning</h4>
+                        <p style="color: #666; font-size: 0.95rem;">Strukturerat miljöarbete med minskad påverkan.</p>
+                    </div>
+                    
+                    <div class="box" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #2d5016; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #fef08a; font-size: 2rem;">🦢</div>
+                        <h4 style="color: #2d5016; margin-bottom: 0.5rem;">Svanenmärkning – Miljötjänster</h4>
+                        <p style="color: #666; font-size: 0.95rem;">Miljövänliga produkter och hållbar avfallshantering.</p>
+                    </div>
+                    
+                    <div class="box" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #2d5016; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #fef08a; font-size: 1.3rem; font-weight: bold;">INSTA<br>800</div>
+                        <h4 style="color: #2d5016; margin-bottom: 0.5rem;">INSTA 800 / SS 627801 – Städkvalitet</h4>
+                        <p style="color: #666; font-size: 0.95rem;">Mätbar städkvalitet med personcertifiering.</p>
+                    </div>
+                    
+                    <div class="box" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #2d5016; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #fef08a; font-size: 2rem;">🏢</div>
+                        <h4 style="color: #2d5016; margin-bottom: 0.5rem;">Almega Serviceföretagen</h4>
+                        <p style="color: #666; font-size: 0.95rem;">Branschauktorisation: Etik, kollektivavtal och kvalitet.</p>
+                    </div>
+                    
+                    <div class="box" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #2d5016; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #fef08a; font-size: 2rem;">⭐</div>
+                        <h4 style="color: #2d5016; margin-bottom: 0.5rem;">Städbranschen Sverige</h4>
+                        <p style="color: #666; font-size: 0.95rem;">Auktorisation – Branschetik och hållbarhet.</p>
+                    </div>
+                    
+                    <div class="box" style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #2d5016; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #fef08a; font-size: 1.5rem; font-weight: bold;">PRYL</div>
+                        <h4 style="color: #2d5016; margin-bottom: 0.5rem;">PRYL-certifiering – Yrkesbevis</h4>
+                        <p style="color: #666; font-size: 0.95rem;">Kompetensbevis för lokalvårdare.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kom igång idag / Kontakt -->
+    <section id="kontakt" style="background: #f9fafb;">
+        <div class="container">
+            <h2>Kom igång idag</h2>
+            <div class="contact-grid">
+                <div class="box contact-box">
+                    <h3>📞 Ring Oss</h3>
+                    <p><a href="tel:086464095">08-646 40 95</a></p>
+                    <p><a href="tel:0707876026">070-787 60 26</a></p>
+                </div>
+                
+                <div class="box contact-box">
+                    <h3>📧 Maila Oss</h3>
+                    <p><a href="mailto:hernan-munoz@hotmail.com">hernan-munoz@hotmail.com</a></p>
+                </div>
+                
+                <div class="box contact-box">
+                    <h3>📍 Besök Oss</h3>
+                    <p>Johan Skyttes Väg 372, lgh 1201<br>125 59 Älvsjö, Stockholm</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="mailto:hernan-munoz@hotmail.com" class="btn btn-primary">Begär Offert Nu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>PURUS Städ i Stockholm</strong></p>
+        <p>Professionell städservice sedan 2015</p>
+        <p style="margin-top: 1rem;">Org.nr: 559027-9898 | F-skatt ✓ Momsregistrerat ✓</p>
+        <p style="margin-top: 1rem;">&copy; 2026 PURUS Städ i Stockholm. Alla rättigheter förbehållna.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        const modalContent = {
+            'kontorsstadning': {
+                title: "Kontorsstädning",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Grundläggande Standardtjänster</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem; color: #666;">
+                        Dessa utförs vanligtvis dagligen eller veckovis för att upprätthålla hygien och trivsel:
+                    </p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #2d5016; font-size: 1.1rem; margin-bottom: 0.8rem;">📋 Alla ytor/rum</h4>
+                        <ul style="line-height: 1.8; color: #555; margin-left: 1.5rem;">
+                            <li>Tömning av papperskorgar och sortering/återvinning</li>
+                            <li>Dammsugning av mattor och golv</li>
+                            <li>Fuktmoppning/torrmoppning av hårda golv</li>
+                            <li>Dammtorkning/avtorkning av fria ytor (fönsterbrädor, hyllor)</li>
+                            <li>Avfläckning av dörrar, handtag, strömbrytare och lister</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #2d5016; font-size: 1.1rem; margin-bottom: 0.8rem;">🚻 Toaletter/sanitet</h4>
+                        <ul style="line-height: 1.8; color: #555; margin-left: 1.5rem;">
+                            <li>Rengöring av toalett, handfat och dusch</li>
+                            <li>Putsning av speglar</li>
+                            <li>Påfyllning av papper, tvål och förbrukningsmaterial</li>
+                            <li>Desinficering av högriskytor</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #2d5016; font-size: 1.1rem; margin-bottom: 0.8rem;">☕ Kök/pentry/matrum</h4>
+                        <ul style="line-height: 1.8; color: #555; margin-left: 1.5rem;">
+                            <li>Avtorkning av diskbänk, bänkskivor och spis</li>
+                            <li>Rengöring av mikro, kaffemaskin (utvändigt)</li>
+                            <li>Tömning av sopor och diskning av gemensamma ytor</li>
+                            <li>Påfyllning av kaffe, tepåsar etc. vid behov</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #2d5016; font-size: 1.1rem; margin-bottom: 0.8rem;">🚪 Entré/reception/korridorer</h4>
+                        <ul style="line-height: 1.8; color: #555; margin-left: 1.5rem;">
+                            <li>Dammsugning och moppning</li>
+                            <li>Avtorkning av reception, bord och glaspartier</li>
+                            <li>Skakning av entrémattor</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #2d5016; font-size: 1.1rem; margin-bottom: 0.8rem;">💼 Kontorslandskap/konferensrum</h4>
+                        <ul style="line-height: 1.8; color: #555; margin-left: 1.5rem;">
+                            <li>Avtorkning av skrivbord och mötesbord</li>
+                            <li>Dammsugning av stolar och stoppade möbler</li>
+                            <li>Rengöring av whiteboard (ej om märkt "låt stå")</li>
+                        </ul>
+                    </div>
+                    
+                    <p style="line-height: 1.8; color: #2d5016; font-weight: 600; margin-top: 2rem; text-align: center;">
+                        Alla tjänster ingår i 90%+ av alla kontorsavtal och utförs med högsta kvalitet!
+                    </p>
+                `
+            },
+            'trygghet-kort': {
+                title: "Trygghet",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Din trygghet är vår prioritet</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Erfaren personal:</strong> All vår personal har gedigen erfarenhet inom städbranschen och vet vad som krävs för att leverera hög kvalitet.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Utbildade medarbetare:</strong> Kontinuerlig utbildning i metoder, produkter och arbetsmiljö gör att våra städare alltid är uppdaterade.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>F-skatt & momsregistrering:</strong> Vi är ett seriöst företag med F-skatt och momsregistrering – allt sker enligt gällande regelverk.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Registrerad arbetsgivare:</strong> Våra anställda har kollektivavtal och schysta villkor, vilket ger trygghet både för dem och för dig som kund.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Kontinuerlig uppföljning:</strong> Vi följer regelbundet upp alla uppdrag och säkerställer att städningen motsvarar överenskommen nivå.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Månadsmöten:</strong> Tillsammans går vi igenom kvalitet, tider, bemanning, ekonomi och förbättringsförslag så att uppdraget hela tiden utvecklas.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Tydliga rutiner:</strong> Checklista och fasta arbetssätt gör att du vet exakt vad som ingår och kan lita på ett jämnt resultat varje gång.
+                    </p>
+                `
+            },
+            'kvalitet-kort': {
+                title: "Kvalitet",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Kvalitet i varje detalj</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Moderna städmetoder:</strong> Vi använder de senaste, effektiva metoderna för bästa resultat med minsta miljöpåverkan.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Miljövänliga produkter:</strong> Alla produkter är miljöcertifierade och säkra för människor, material och miljö.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Kontinuerlig kvalitetssäkring:</strong> Regelbundna uppföljningar, interna revisioner och kontrollrundor säkerställer att standarden alltid hålls.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Mätbara resultat:</strong> Vi arbetar med tydliga checklistor och dokumentation så att ni alltid vet vad som gjorts och kan följa upp nivån.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Certifierade processer:</strong> Vårt systematiska kvalitetsarbete följer ISO 9001-standarder för ledningssystem och kontinuerliga förbättringar.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Kundnöjdhetsmätning:</strong> Vi mäter och följer upp er upplevelse löpande för att säkerställa högsta tillfredsställelse och proaktiva förbättringar.
+                    </p>
+                `
+            },
+            'seriositet': {
+                title: "Seriositet",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Ärlighet och professionalism</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Sedan 2015:</strong> Vi har byggt vår verksamhet på långsiktighet och förtroende. Många av våra kunder har varit med oss från början.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Inga dolda kostnader:</strong> Vad vi säger är vad ni får. Tydliga avtal och transparenta priser.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Vi håller vad vi lovar:</strong> Punktlighet, kvalitet och kommunikation är självklarheter för oss.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Professionell hantering:</strong> Från första kontakten till löpande drift - allt sköts professionellt och strukturerat.
+                    </p>
+                `
+            },
+            'tillganglighet': {
+                title: "Tillgänglighet",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Vi finns alltid för dig</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>24/7 service:</strong> Akut städbehov mitt i natten? Helgstädning? Vi finns tillgängliga dygnet runt.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>365 dagar om året:</strong> Inga stängda dagar. Vi städar även storhelger om det behövs.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Snabb respons:</strong> Ring, maila eller SMS:a - vi återkommer snabbt och löser dina behov.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Flexibla tider:</strong> Vi anpassar våra städtider efter er verksamhet, oavsett om det är tidig morgon, sen kväll eller helg.
+                    </p>
+                `
+            },
+            trygghet: {
+                title: "Trygghet i varje uppdrag",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Vad innebär trygghet hos PURUS?</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Bakgrundskontrollerad personal:</strong> All vår personal genomgår noggranna bakgrundskontroller innan anställning. Vi vill att du ska känna dig helt trygg med vem som kommer in i dina lokaler.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Fast städare:</strong> Du får samma städare varje gång, som lär känna dina specifika behov och preferenser. Detta skapar kontinuitet och förtroende.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Fullgod försäkring:</strong> Vi har omfattande ansvarsförsäkringar som täcker eventuella skador. Du kan känna dig trygg oavsett vad som händer.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Tydliga avtal:</strong> Inga krångliga villkor eller dolda kostnader. Allt är transparent och tydligt från början.
+                    </p>
+                `
+            },
+            enkelt: {
+                title: "Enkelt att samarbeta",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Smidiga processer från start till mål</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Snabb offertprocess:</strong> Vi återkommer med offert inom 24 timmar. Inga långa väntetider.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>En kontaktperson:</strong> Du har alltid en fast kontaktperson hos oss som känner till ditt uppdrag och kan ge snabba svar.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Flexibel bokning:</strong> Behöver du ändra tid eller lägga till extra städning? Ett samtal eller mejl räcker.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Digital rapportering:</strong> Vi använder moderna system för att hålla dig uppdaterad om varje städpass.
+                    </p>
+                `
+            },
+            kvalitet: {
+                title: "Ansvar för kvalitet",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Kvalitet som standard, inte undantag</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Strukturerade rutiner:</strong> Vi arbetar enligt beprövade checklistor och metoder som säkerställer att ingenting missas.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Regelbundna kvalitetskontroller:</strong> Våra arbetsledare gör kontinuerliga inspektioner för att säkerställa att standarden hålls.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>100% nöjd-kund-garanti:</strong> Inte nöjd? Vi kommer tillbaka och åtgärdar utan extra kostnad. Det är vårt löfte.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Utbildad personal:</strong> All personal genomgår löpande utbildning i nya metoder och produkter.
+                    </p>
+                `
+            },
+            relationer: {
+                title: "Långsiktiga relationer",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Vi bygger för framtiden</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Låg personalomsättning:</strong> Våra medarbetare trivs och stannar länge. Det betyder stabilitet för dig som kund.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Bra arbetsvillkor:</strong> Vi värnar om vår personal med schysta villkor, vilket resulterar i nöjdare städare och bättre kvalitet för dig.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Kontinuerlig förbättring:</strong> Ju längre vi samarbetar, desto bättre lär vi känna era behov och kan optimera städningen.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Mindre administration:</strong> Ett långsiktigt samarbete betyder färre offerter, färre nya kontakter och mindre krångel.
+                    </p>
+                `
+            },
+            flexibilitet: {
+                title: "Flexibilitet när behoven ändras",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Vi anpassar oss efter dig</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Säsongsanpassning:</strong> Behöver du pausa städningen under sommaren eller intensifiera under högsäsong? Inga problem.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Tilläggstjänster:</strong> Fönsterputs inför besök? Extra storstädning? Vi löser det snabbt.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Skala upp eller ner:</strong> Växer verksamheten? Vi växer med er. Mindre behov? Vi anpassar omfattningen.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Ändrade tider:</strong> Flytta städdatum enkelt om ni behöver lokalerna vid andra tillfällen.
+                    </p>
+                `
+            },
+            checkin: {
+                title: "Check-in – Strukturerad uppföljning",
+                content: `
+                    <h3 style="color: #2d5016; margin-bottom: 1.5rem;">Proaktiv uppföljning för bästa resultat</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Månatliga avstämningar:</strong> Vi träffas regelbundet för att säkerställa att allt fungerar optimalt. Problemen löser vi innan de blir stora.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Transparens:</strong> Ni får alltid veta hur uppdraget mår, vad som fungerar bra och vad vi kan förbättra.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Ekonomisk uppföljning:</strong> Vi går igenom kostnader och ser till att uppdraget är effektivt organiserat.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        <strong>Framåtplanering:</strong> Vi diskuterar kommande behov och förändringar så ni alltid ligger steget före.
+                    </p>
+                `
+            }
+        };
+
+        window.openModal = function(type) {
+            const modal = document.getElementById('modal');
+            const modalBody = document.getElementById('modal-body');
+            const content = modalContent[type];
+            
+            modalBody.innerHTML = `
+                <h2 style="color: #2d5016; margin-bottom: 1.5rem; font-size: 2rem;">${content.title}</h2>
+                ${content.content}
+            `;
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeModal = function() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
